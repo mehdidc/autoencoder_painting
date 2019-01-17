@@ -87,7 +87,7 @@ class AE(nn.Module):
             x = self.decode(z)
             return x
         else:
-            x = torch.rand(nb_examples, self.nc, self.w, self.w) 
+            x = torch.rand(nb_examples, self.nc, self.w, self.w).to(device) 
             for _ in range(self.nb_iter_generation):
                 x, _, _ = self(x)
             return x
